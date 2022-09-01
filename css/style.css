@@ -1,0 +1,206 @@
+/* defining the root variables needed to make the webpage */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital@1&family=Poppins:ital@0;1&display=swap');
+:root{
+    --header-height:3.5rem;
+    /* body color and background color */
+    --first-color:hsla(229, 50%, 38%, 1);
+    --second-color:hsla(311, 50%, 52%, 1);
+    --third-color:hsla(183, 47%, 48%, 1);
+    --text-color:hsla(183, 47%, 86%, 1);
+    --font-1:'Arsenal', sans-serif;
+    /* font size */
+    --h2-font-size:2.5rem;
+    --h1-font-size:2rem;
+    --small-font-size:1.5rem;
+    
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: var(--font-1);
+    background-color: var(--first-color);
+    color: var(--text-color);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* z-index: -1; */
+    /* height: var(--header-height); */
+}
+.nav__link{
+    color: var(--text-color)
+}
+
+.nav__ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nav__toggle{
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    cursor: pointer;
+    /* z-index: -1; */
+}
+.nav__list1{
+    margin: .5rem;
+}
+.nav__list{
+    margin: .5rem;
+}
+.nav__close{
+    position: absolute;
+    right: 1rem;
+    top: 4.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.nav__menu{
+    width: 100%;
+    box-shadow: 0px 3px 6px hsla(183, 47%, 6%, 1);
+    position: fixed;
+    top: -100%;
+    transition: top .5s;
+    background-color: var(--first-color);
+    /* z-index: 1; */
+    
+}
+.show__menu{
+    top: 0;
+}
+.bg1,
+.bg2,
+.bg3{
+    position: fixed;
+    z-index: -1;
+}
+.bg1{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: var(--second-color);
+    top: -40px;
+    filter: blur(60px);
+}
+.bg2{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: aqua;
+    top: 240px;
+    right: -50px;
+    filter: blur(60px);
+}
+.bg3{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: hsla(0, 40%, 45%, 1);
+    bottom: 0px;
+    left: -50px;
+    filter: blur(60px);
+}
+.home__image{
+    width: 100%;
+    position: absolute;
+    top: 140px;
+    display: flex;
+    justify-content: center;
+}
+.ghost__image{
+    width: 200px;
+    animation: bounce 3s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%{
+        transform: translateY(0.5rem);
+    }
+    50%{
+        transform: translateY(1rem);
+    }
+    100%{
+        transform: translateY(0.5rem);
+    }
+}
+.home__text{
+    position: absolute;
+    top: 70%;
+    width: 100%;
+}
+.home__title{
+    text-align: center;
+    font-size: 3rem;
+}
+.home__subtitle1{
+    text-align: center;
+}
+.home__subtitle2{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.home__btn{
+    padding: 1rem;
+    text-align: center;
+    background: linear-gradient(to bottom right,
+                                var(--second-color),
+                                var(--third-color));
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+
+}
+.home__button{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.scroll__menu{
+    box-shadow: 0px 3px 6px hsla(183, 47%, 6%, 1);
+}
+.home__footer{
+    width: 100%;
+}
+.home__footer-text{
+    text-align: center;
+    margin: 1rem;
+    font-size: .75rem;
+}
+@media screen and (min-width:800px){
+    .nav__toggle,
+    .nav__close{
+        display: none;
+    }
+    .nav__menu{
+        display: flex;
+        flex-direction: row;
+        top: 0;
+        background-color: transparent;
+    }
+    .nav__ul{
+        display: flex;
+        flex-direction: row;
+        margin-left: 50vw;
+    }
+    .nav__list{
+        margin-left: 3rem;
+        /* position: absolute; */
+        /* right: 3rem; */
+    }
+}
